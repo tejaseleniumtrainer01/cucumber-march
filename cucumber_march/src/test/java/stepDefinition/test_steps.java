@@ -37,6 +37,7 @@ public class test_steps {
 
 	@When("^User Navigate to LogIn Page$")
 // click on account link in home page
+	//date modified: 08/04/2021 
 	public void user_Navigate_to_LogIn_Page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.findElement(By.xpath(".//*[@id='account']/a")).click();
