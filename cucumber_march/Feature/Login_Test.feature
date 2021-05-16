@@ -6,8 +6,8 @@ Scenario: Successful Login with Valid Credentials
 	When User Navigate to LogIn Page
 	And User enters UserName and Password
 	Then Message displayed Login Successfully
- 
- 
+
+  
  @Regression
 Scenario: Successful LogOut
 	Given User is on Home Page
@@ -23,3 +23,4 @@ Scenario: Successful Login with Valid Credentials2
 	When User Navigate to LogIn Page
 	And User enters UserName and Password
 	Then Message displayed Login Successfully
+	When User Navigate to LogIn Page
