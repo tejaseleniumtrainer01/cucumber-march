@@ -16,7 +16,6 @@ Scenario: Successful LogOut
 	When User LogOut from the Application
 	Then Message displayed LogOut Successfully
 
-	
 @SmokeTest
 Scenario: Successful Login with Valid Credentials2
 	Given User is on Home Page

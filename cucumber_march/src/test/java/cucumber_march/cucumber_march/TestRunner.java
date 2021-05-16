@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"Feature/Login_Test1.feature"}
+		features = {"Feature/Login_Test1.feature","Feature/Login_Test.feature"}
 		,glue={"stepDefinition"}
 		
 		)
