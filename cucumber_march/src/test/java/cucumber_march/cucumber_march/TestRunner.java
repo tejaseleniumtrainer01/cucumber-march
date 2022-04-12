@@ -16,7 +16,6 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = {"Feature/Login_Test1.feature"}
 		,glue={"stepDefinition"}
-		
 		)
 public class TestRunner {
 	  @AfterClass
