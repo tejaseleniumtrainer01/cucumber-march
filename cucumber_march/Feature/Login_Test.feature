@@ -7,7 +7,7 @@ Scenario: Successful Login with Valid Credentials
 	And User enters UserName and Password
 	Then Message displayed Login Successfully
  
- @Regression
+ @Regression SIT
 Scenario: Successful LogOut
 	Given User is on Home Page
 	When User Navigate to LogIn Page
