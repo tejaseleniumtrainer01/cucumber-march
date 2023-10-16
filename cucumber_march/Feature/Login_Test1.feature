@@ -7,6 +7,7 @@ Scenario Outline: Successful Login with Valid Credentials
 	And User enters <Uid> and <Pwd> with credentials
 	And Compelte registraion <FName> and <LName>
 	Then Message displayed Login Successfully
+
  
  Examples:
  |Uid    |Pwd   |FName  |LName  |
