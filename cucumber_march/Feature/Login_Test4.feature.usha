@@ -1,6 +1,6 @@
 Feature: Login Action
  
- @SmokeTest @UAT @SIT
+ @SmokeTest @UAT @SIT@UAT
 Scenario: Successful Login with Valid Credentials
 	Given User is on Home Page
 	When user clicks LogIn link
