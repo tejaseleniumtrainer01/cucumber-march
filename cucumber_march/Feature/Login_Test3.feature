@@ -12,4 +12,4 @@ Scenario Outline: Successful Login with Valid Credentials
  Examples:
  |Uid    |Pwd   |FName  |LName  |
  |"Teja" |"asdf"|"Teja" |"Kumar"|	
- 
+ |"Kitty"|"qwer"|"Kitty"|"Witty"|
