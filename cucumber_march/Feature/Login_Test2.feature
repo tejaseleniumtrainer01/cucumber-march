@@ -1,6 +1,6 @@
 Feature: Login Action
  
-@Regression @modulename @Smoketest @UAT @QA @SIT
+@Regression @modulename @Smoketest @UAT @QA 
 Scenario Outline: Successful Login with Valid Credentials
 	Given User is on Home Page
 	When User Navigate to LogIn Page
