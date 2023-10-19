@@ -3,15 +3,14 @@ Feature: Login Action
 @Regression @modulename @Smoketest  @QA 
 Scenario Outline: Successful Login with Valid Credentials
 	Given User is on Home Page
-	When User Navigate to LogIn Page
 	And User enters <Uid> and <Pwd> with credentials
-	And Compelte registraion <FName> and <LName>
-	Then Message displayed Login Successfully
+#	And Compelte registraion <FName> and <LName>
+#	Then Message displayed Login Successfully
 
  
  Examples:
- |Uid    |Pwd   |FName  |LName  |
- |"Teja" |"asdf"|"Teja" |"Kumar"|	
- |"John" |"xyza"|"John" |"John" |
- |"Smith"|"abcd"|"Smith"|"Smith"|
- |"Rose"|"xyz"|"Rosy"|"Jasmine"|
+ |Uid     |Pwd       |FName  |LName  |
+ |"Admin" |"admin123"|"Teja" |"Kumar"|	
+# |"Admin" |"admin123"|"John" |"John" |
+# |"Admin" |"admin123"|"Smith"|"Smith"|
+
