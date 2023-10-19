@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 
 import com.vimalselvam.cucumber.listener.Reporter;
@@ -29,28 +30,27 @@ public class test_steps {
 	@Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		String path="C:\\Users\\tejas\\Downloads\\chromedriver_win32\\chromedriver.exe";
-		System.setProperty("webdriver.chrome.driver", path);
-		driver=new ChromeDriver();
+		ChromeOptions co=new ChromeOptions();
+		co.setBrowserVersion("117");
+		driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
 
-	@When("^User Navigate to LogIn Page$")
+//	@When("^User Navigate to LogIn Page$")
 // click on account link in home page
 	//date modified: 08/04/2021 
-	public void user_Navigate_to_LogIn_Page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.xpath(".//*[@id='account']/a")).click();
-		Reporter.addStepLog("User_Navigate_to_LogIn_Page");
-	}
+//	public void user_Navigate_to_LogIn_Page() throws Throwable {
+//	    // Write code here that turns the phrase above into concrete actions
+//		Reporter.addStepLog("User_Navigate_to_LogIn_Page");
+//	}
 
 	@When("^User enters \"(.*)\" and \"(.*)\" with credentials$")
 	public void user_enters_UserName_and_Password_withcredentials(String uidval,String pwdval) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.id("log")).sendKeys(uidval); 	 
-	    driver.findElement(By.id("pwd")).sendKeys(pwdval);
-	    driver.findElement(By.id("login")).click();
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")).sendKeys(uidval); 	 
+	    driver.findElement(By.name("password")).sendKeys(pwdval);
+	    driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
 	}
 	@And("^Compelte registraion \"(.*)\" and \"(.*)\"$")
 	public void compelte_registraion(String strFname,String strLname) throws Throwable {
@@ -116,4 +116,15 @@ public class test_steps {
 	public void closeBrowser(){
 		driver.quit();
 	}
+	@And("^User Compeltes registraion by entering fname \"(.*)\" , lname \"(.*)\", mobile \"(.*)\" and email\"(.*)\" $")
+	public void user_compelte_registraion(String strFname,String strLname,String strmobile,String stremail) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("Firstname")).sendKeys(strFname); 	 
+	    driver.findElement(By.id("Lastname")).sendKeys(strLname);
+	    driver.findElement(By.id("mobile")).sendKeys(strmobile);
+	    driver.findElement(By.id("email")).sendKeys(stremail);
+	}
+	
 }
+
+
