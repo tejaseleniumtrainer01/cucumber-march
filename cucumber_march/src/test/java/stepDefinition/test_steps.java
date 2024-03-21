@@ -31,7 +31,7 @@ public class test_steps {
 	public void user_is_on_Home_Page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		ChromeOptions co=new ChromeOptions();
-		co.setBrowserVersion("117");
+		co.setBrowserVersion("122");
 		driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/");
