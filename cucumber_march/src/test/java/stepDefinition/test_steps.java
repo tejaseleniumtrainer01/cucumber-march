@@ -48,7 +48,7 @@ public class test_steps {
 	@When("^User enters \"(.*)\" and \"(.*)\" with credentials$")
 	public void user_enters_UserName_and_Password_withcredentials(String uidval,String pwdval) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")).sendKeys(uidval); 	 
+		driver.findElement(By.name("username")).sendKeys(uidval); 	 
 	    driver.findElement(By.name("password")).sendKeys(pwdval);
 	    driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
 	}
@@ -124,7 +124,11 @@ public class test_steps {
 	    driver.findElement(By.id("mobile")).sendKeys(strmobile);
 	    driver.findElement(By.id("email")).sendKeys(stremail);
 	}
-	
+	@And("^Click MyInfo and Qualifications$")
+	public void clickmyinfoqualifications() {
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a")).click();	 
+	    driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[9]/a")).click();
+	}
 }
 
 
