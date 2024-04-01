@@ -23,6 +23,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class test_steps {
+	By origin=By.xpath("//*[@id=\"bookFlightOriginInput\"]");
+	By destination=By.xpath("//*[@id=\"bookFlightDestinationInput\"]");
+	By findflight=By.xpath("//*[@id=\"bookFlightForm\"]/div[5]/div/div[1]/div/div/div[2]/button[1]/span");
 	public String browserType;
 	public final String screenshotsFolderPath = System.getProperty("user.dir") + "\\output\\screenshots\\";
 	public static WebDriver driver;
@@ -34,7 +37,8 @@ public class test_steps {
 		co.setBrowserVersion("122");
 		driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
-		driver.get("https://opensource-demo.orangehrmlive.com/");
+//		driver.get("https://opensource-demo.orangehrmlive.com/");
+		driver.get("https://www.united.com/en/us");
 	}
 
 //	@When("^User Navigate to LogIn Page$")
@@ -45,12 +49,28 @@ public class test_steps {
 //		Reporter.addStepLog("User_Navigate_to_LogIn_Page");
 //	}
 
+	@When("^User enters from \"(.*)\" and destination \"(.*)\" details$")
+	public void fromandto(String originplace,String destinationplace) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		entertext(origin,originplace);
+		entertext(destination, destinationplace);
+		eleclick(findflight);
+	}
+	public static void entertext(By xpathvalue,String strtext) {
+		driver.findElement(xpathvalue).clear();
+		driver.findElement(xpathvalue).sendKeys(strtext);
+	}
+	public static void eleclick(By xpathvalue) {
+		driver.findElement(xpathvalue).click();
+		
+	}
 	@When("^User enters \"(.*)\" and \"(.*)\" with credentials$")
 	public void user_enters_UserName_and_Password_withcredentials(String uidval,String pwdval) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.name("username")).sendKeys(uidval); 	 
-	    driver.findElement(By.name("password")).sendKeys(pwdval);
-	    driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
+		driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")).sendKeys(uidval); 	 
+	    driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input")).sendKeys(pwdval);
+	    driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
 	}
 	@And("^Compelte registraion \"(.*)\" and \"(.*)\"$")
 	public void compelte_registraion(String strFname,String strLname) throws Throwable {
