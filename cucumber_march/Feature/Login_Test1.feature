@@ -13,8 +13,6 @@ Scenario Outline: Successful Login with Valid Credentials
  |"Admin" |"admin123"|"Teja" |"Kumar"|	
  |"Admin" |"admin123"|"John" |"John" |
 
-
-
 @Regression @modulename @Smoketest  @QA 
 Scenario Outline: Successful Login with Valid Credentials
 	Given User is on Home Page
