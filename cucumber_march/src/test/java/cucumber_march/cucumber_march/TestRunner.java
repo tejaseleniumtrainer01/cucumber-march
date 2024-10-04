@@ -16,6 +16,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = {"Feature/Qualification.feature"}
 		,glue={"stepDefinition"}
+		,tags= {"@QA"}
+		,plugin={"pretty","json:target/cucumber.json","html:target/cucumber.html"
+				,"junit:target/cucumber.xml"}
 		)
 public class TestRunner {
 	  @AfterClass
