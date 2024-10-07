@@ -8,6 +8,7 @@ Scenario Outline: Successful Login with Valid Credentials
 	And Compelte registraion <FName> and <LName>
 	Then Message displayed Login Successfully
  
+ 
  Examples:
  |Uid    |Pwd   |FName  |LName  |
  #|"Teja" |"asdf"|"Teja" |"Kumar"|	
