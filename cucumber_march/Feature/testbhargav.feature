@@ -19,6 +19,7 @@ Feature: Title of your feature
     When I check for the <value> in step
     Then I verify the <status> in step
 
+
     Examples: 
       | name  | value | status  |
       | name1 |     9 | success |
