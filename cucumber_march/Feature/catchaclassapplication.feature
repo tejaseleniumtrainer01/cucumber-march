@@ -10,4 +10,3 @@ Scenario Outline: Login to catch a class application
  |LoginType         |Userid                            |Pwd            | 
  |"Freelance Tutor" |"teja.seleniumtrainer01@gmail.com"|"Catchaclass1@"|	
 
- 
