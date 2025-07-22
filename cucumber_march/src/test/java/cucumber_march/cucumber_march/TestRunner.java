@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"Feature/catchaclassapplication.feature"}
+		features = {"Feature/Loginhrm.feature"}
 		,glue={"stepDefinition"}
-		,tags= {"@SmokeTest"}
+		,tags= {"@Regression"}
 		,plugin={"pretty","json:target/cucumber.json","html:target/cucumber.html"
 				,"junit:target/cucumber.xml"}
 		)
