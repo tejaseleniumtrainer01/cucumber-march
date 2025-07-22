@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"Feature/Loginhrm.feature"}
+		features = {"Feature/Qualification.feature"}
 		,glue={"stepDefinition"}
-		,tags= {"@Regression"}
+		,tags= {"@SIT"}
 		,plugin={"pretty","json:target/cucumber.json","html:target/cucumber.html"
 				,"junit:target/cucumber.xml"}
 		)
