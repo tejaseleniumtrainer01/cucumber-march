@@ -1,22 +1,18 @@
 package cucumber_march.cucumber_march;
 
-import java.io.File;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-
-import com.vimalselvam.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"Feature/Qualification.feature"}
+		features = {"Feature/catchaclassapplication.feature"}
 		,glue={"stepDefinition"}
-		,tags= {"@QA"}
+		,tags= {"@SmokeTest"}
 		,plugin={"pretty","json:target/cucumber.json","html:target/cucumber.html"
 				,"junit:target/cucumber.xml"}
 		)
