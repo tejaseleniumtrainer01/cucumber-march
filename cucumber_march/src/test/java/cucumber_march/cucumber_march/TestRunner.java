@@ -14,12 +14,22 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"Feature/Qualification.feature"}
+		features = {"Feature/catchaclassapplication.feature"}
 		,glue={"stepDefinition"}
-		,tags= {"@QA"}
+		,tags= {"@SmokeTest"}
 		,plugin={"pretty","json:target/cucumber.json","html:target/cucumber.html"
 				,"junit:target/cucumber.xml"}
 		)
+
+
+
+
+
+
+
+
+
+
 public class TestRunner {
 	  @AfterClass
 	    public static void teardown() throws UnknownHostException {
