@@ -33,7 +33,7 @@ public class test_steps {
 	By txtuid=By.id("email");
 	By txtpwd=By.id("pwd");
 	By btnlogin=By.name("login");
-	By lnklogout=By.linkText("Logout ");
+	By lnklogout=By.xpath("//*[@id='sidebar']/ul[2]/li/a");
 	 
 	public String browserType;
 	public final String screenshotsFolderPath = System.getProperty("user.dir") + "\\output\\screenshots\\";
@@ -209,14 +209,24 @@ public class test_steps {
 	public void catch_a_class_Page_urlopen() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		ChromeOptions co=new ChromeOptions();
-		co.setBrowserVersion("137");
+		co.setBrowserVersion("150");
 		driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
 		driver.get("https://sit.catchaclass.ca/");
 	}
 	@And("^Catch a class logout$")
-	public void catch_a_class_logout() {
+	public void catch_a_class_logout() throws InterruptedException {
+		Thread.sleep(5000);
 		eleclick(lnklogout);
+	}
+	@And("^Then user enters uid \"(.*)\" and password \"(.*)\" details$")
+	public void catch_a_class_login(String struid,String strpwd) {
+		
+		eleclick(lnklogin);
+		eleclick(lnkFreelanceTutor);
+		entertext(txtuid,struid);
+		entertext(txtpwd,strpwd);
+		eleclick(btnlogin);
 	}
 	
 }
