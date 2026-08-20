@@ -34,6 +34,8 @@ public class test_steps {
 	By txtpwd=By.id("pwd");
 	By btnlogin=By.name("login");
 	By lnklogout=By.xpath("//*[@id='sidebar']/ul[2]/li/a");
+	By lnkViewAddClasses = By.xpath("//*[@id=\'sidebar\']/ul[1]/li[2]/a");
+	By btnaddclass = By.xpath("//*[@id='loadContentButton']");
 	 
 	public String browserType;
 	public final String screenshotsFolderPath = System.getProperty("user.dir") + "\\output\\screenshots\\";
@@ -227,6 +229,14 @@ public class test_steps {
 		entertext(txtuid,struid);
 		entertext(txtpwd,strpwd);
 		eleclick(btnlogin);
+		
 	}
+	@And("^Add a New Class$")
+	public void view_add_classes() {
+		eleclick(lnkViewAddClasses);
+		eleclick(btnaddclass);
+		
+	}
+	
 	
 }
